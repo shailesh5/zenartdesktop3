@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--******************************************************************************
+ * Licensed Materials - Property of IBM
+ * (c) Copyright IBM Corporation 2013. All Rights Reserved.
+ * 
+ * Note to U.S. Government Users Restricted Rights:
+ * Use, duplication or disclosure restricted by GSA ADP Schedule
+ * Contract with IBM Corp. 
+ *******************************************************************************-->
+<!--
+
+This is a sample Ant script that you can use to validate and create a ram:server reference.
+
+For this to work correctly you must use this as imported, as follows.
+
+  <import file="${path.to.ramServer.xml}/ramServer.xml"/>
+  
+  <target name="target that needs the ramserver" depends="ramserver">
+  	<ram:download ...>
+  		<ram:server refID="${ramServerID}"/>
+  </target> 
+  
+Should not be executed thru <ant file=".."/> because the server reference and property
+would not be available to the calling ant build file.
+  
+Prerequisites:
+
+1.	This script uses Rational Asset Manager Ant tasks.
+	When you run this Ant script, you must download the ramclient.zip file, extract it to a folder, and include that 
+	folder on the ant lib path.
+	The ramclient.zip file contains a set of .jar and Ant script files. You can download the file from the Extensions 
+	page of any deployed Rational Asset Manager server instance.
+	To access the file directly, use this URL: 
+		http://<host, e.g., localhost>:<port, e.g., 9080>/ram/ramclient.zip
+		
+2.	Properties:
+		ram.url is the URL for the Rational Asset Manager Web services. To find this URL, on the Extensions page of Rational Asset Manager, see the Repository location. 
+		ram.user.id is the user ID to use when you log in to the Rational Asset Manager server.
+		ram.user.passwd is the password to use when you log in to the Rational Asset Manager server. This is mutually exclusive with ram.user.passwd.file.
+		ram.user.passwd.file is the file that contains the encrypted password to use when you log in to the Rational Asset Manager server. This is mutually exclusive with ram.user.passwd.
+  
+-->
+
+<project name="ramserver" default="ramserver" xmlns:ram="antlib:com.ibm.ram.ant">
+<property file="publish.properties"/>
+	<description>
+		Common ant script to validate and create the ramserver
+	</description>
+	
+	<target name="ramServerPreReq">
+		<fail message="[ram.user.id] property is not set" unless="ram.user.id"/>
+		<condition property="ram.valid.pwfile">
+			<and>
+				<isset property="ram.user.passwd.file"/>
+				<available file="${ram.user.passwd.file}"/>
+			</and>
+		</condition>		
+		<fail message="Invalid [ram.user.passwd.file] property">
+			<condition>
+				<and>
+					<isset property="ram.user.passwd.file"/>
+					<not>
+						<isset property="ram.valid.pwfile"/>
+					</not>
+				</and>
+			</condition>
+		</fail>
+		<fail message="Both [ram.user.passwd] or [ram.user.passwd.file] property must not be set">
+			<condition>
+				<and>
+					<isset property="ram.user.passwd"/>
+					<isset property="ram.validpwfile"/>
+				</and>
+			</condition>
+		</fail>
+		<fail message="Either [ram.user.passwd] or [ram.user.passwd.file] property must be set." >
+			<condition>
+				<not>
+					<or>
+						<isset property="ram.user.passwd"/>
+						<isset property="ram.valid.pwfile"/>
+					</or>
+				</not>
+			</condition>
+		</fail>
+		<fail message="[ram.url] property is not set" unless="ram.url"/>
+
+		<condition property="ramServerID" value="ramServerpw" else="ramServerpwf">
+			<isset property="ram.user.passwd"/>
+		</condition>
+		
+		<echo message="RAM Server: uid=${ram.user.id}, url=${ram.url}"/>
+		
+	</target>
+	
+	<target name="ramserver" depends="ramServerPreReq,ramserverpw,ramserverpwf"/>
+	
+	<target name="ramserverpw" depends="ramServerPreReq" if="ram.user.passwd">
+		<ram:server id="ramServerpw" username="${ram.user.id}" password="${ram.user.passwd}" url="${ram.url}" />
+	</target>
+	
+	<target name="ramserverpwf" depends="ramServerPreReq" if="ram.valid.pwfile">
+		<ram:server id="ramServerpwf" username="${ram.user.id}" url="${ram.url}">
+			<ram:password id="pwf" passwordfile="${ram.user.passwd.file}"/>
+		</ram:server>		
+	</target>
+	
+</project>

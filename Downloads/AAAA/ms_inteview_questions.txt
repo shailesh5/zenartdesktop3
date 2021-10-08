@@ -1,0 +1,37 @@
+Round - I
+1. Create an Immutable Object
+2. What changes required for handling mutable object references in immutable objects
+3. Changing value of immutable with reflection.
+4. Code for hashCode and equals method
+5. Working on Hashmap
+6. Working of Hashmap w.r.t change in implementation of equals and hashCode
+7. Sorting Objects.
+8. Sorting UI table using webservice call 
+9. Design a processor 
+   a. implementation are DBProcessor, FileProcessor
+   b. discuss the exception handling mechanism in implementating classes and changes required.
+   c. If many processors, changes in code to maintain list of active processors.
+10. Public private and protected w.r.t. package
+11. volatile keyword in java
+12. Code to create a thread and maintain a list of threads. 
+13. Database design for employee, team and project.
+14. Database changes for Team having multiple Employee.
+15. Query to find avg salary of all Employees working on perticular project
+
+   
+Round - II
+1. Recent changes done in Hashmap implementation
+2. Implement conversion from linked list to tree structure for Hashmap for list of entries 
+3. Implement Support ticketing system in multithreaded environment
+4. Implement Producer Consumer in multithreaded environment in java 
+5. Query to find employess and their top performance in month in an year.
+
+Round - III
+1. volatile keyword in java, volatile variables, volatile Arrays
+2. Which data type you will use to store password and why?
+3. Deep copy vs Shallow copy
+4. Best way to deep copy an object of 1000 attributes.
+5. Implement singleton
+6. Discuss Singleton with respect to Reflection , Serialization and distributed environment.
+7. Implement functions to find next min and next max and discuss time complexities of various approaches.
+8. Implement a function to searching an element in rotated array. 

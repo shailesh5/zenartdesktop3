@@ -1,0 +1,138 @@
+// Create a Employee class which give an id to unique across various instances of class
+
+class Employee{
+
+	static uniequId = 0;
+	private String empName;
+	private int empId;
+
+
+	Employee(String empName){
+		
+		this.empId = uniqueId++;
+		this.empName = empName;
+	}
+
+}
+
+// 
+class MyCyclicBarrier{
+
+private int noOfParties;
+private int partiesFinished;
+private Runnable runnable;
+
+MyCyclicBarrier(int parties, Runnable task){
+	this.noOfParties = parties;
+	this.partiesFinished = parties;
+	this.runnable = task;
+}
+
+public void synchronised await(){
+	partiesFinished = partiesFinished -1;
+	if(partiesFinished > 0)
+	 this.wait();
+	
+	this.runnable.run();
+	this.notify();
+}
+
+public static void main(String[] args){
+
+
+	Runnable task = () -> {System.out.println("All the tasks have been finished !!!"); }
+	MyCyclicBarrier barrier = new MyCyclicBarrier(10, task);	 
+	ExecuterService service = Executors.newFixedThreadPool(5);
+	
+	service.execute(new MyThread(barrier));
+	service.execute(new MyThread(barrier)); 
+
+	service.shutdown();
+}
+
+
+}
+
+//User username
+- notify(Employee )
+
+// Employee - empid, empname, salary, dept
+   //set of subscribers
+
+method - 
+- register(user)-- add users to the subscribers
+- update()
+
+interface Service{
+	notify(Employee e);
+}
+
+class ServiceA implements Service{
+	@Override
+	public void execute(){
+	
+	}
+
+}
+class ServiceB implements Service{
+	@Override
+	public void execute(){
+	
+	}
+}
+
+interface User{
+		
+}
+
+
+class UserA  implements User {
+	private String userName;
+	
+	User(String userName){
+		this.userName = userName;
+	}
+
+	public void notify(Employee emp){
+		// User oriented operations based on the changes in the object
+	}
+}
+
+class Employee{
+	private int empId;
+	private String empName;
+	private double salary;
+	private Department deptId;
+	
+	private ArrayList<User> subscriberList = new ArrayList<User>(); 
+
+	Employee(int empId, String empName, double salary, Department dept){
+		this.....
+	}
+
+	public void register(User user){
+		subscriberList.add(user);
+	}
+	
+	public void update(){
+		// if any changes done in the object
+		for(User user : subscriberList){
+			user.notify(this);
+		}
+	
+	}
+
+}
+
+public class Test{
+
+	public static void main(String[] args){
+		User user = new UserA("UI");
+		Department dept = new Department("HR");
+		Employee emp = new Employee(1, "test", 10.0, dept);
+
+		
+		emp.register(user);
+		emp.update();
+	}
+}

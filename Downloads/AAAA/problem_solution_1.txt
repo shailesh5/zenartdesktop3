@@ -1,0 +1,32 @@
+void funct(int[] arr, int sum){
+
+HashMap<Integer, Integer> hashMap = new  {3,2,9,6,4,7,5}
+
+for(iterate over A){ {3,2,9,6,4,7,5}
+	int val = sum - arrValue; // 10-3 = 7
+	
+	if(sum /2 == val){
+		int occ = hashMap.get(val);
+		int repetition = occ /2;
+		if(){
+		}
+		for(i = 0 ; i<  repetition)
+		
+	}
+	
+	
+	whether val extst in A 
+	
+		if yes == 
+			print this val// print(3,7)
+			remove from array
+	
+		else
+			continue;
+}
+
+
+}
+
+
+int[] arr = {3,2,9,6,4,7,5,4,6}

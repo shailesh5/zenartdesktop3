@@ -1,0 +1,47 @@
+public interface Processor{
+	public String process();
+}
+
+class Cache{
+
+// We can use One Single Object as Value which may contain  TTL & Data 
+private ConcurrentHashMap<Integer, LocalTime> timeMap  = new ConcurrentHashMap<>(); 
+private ConcurrentHashMap<Integer, String> dataMap = new ConcurrentHashMap<>();
+private Processor p = null;
+
+public Cache(Processor p){
+	this.p = p;
+}
+
+public String getData(Integer id){
+	
+	Set<Integer> ids = dataMap.entrySet();
+	
+	for(Integer id : ids){
+		
+		String data = dataMap.get(id);
+		if(data == null){
+			data = p.process(); // All the implementor's process will be called
+			dataMap.put(id, data);
+			timeMap.put(id, new LocalDate().curTime())
+			break;
+		}
+	}
+	return data;
+}
+
+public void clearCache(){
+	
+	Set<Integer> ids = timeMap.entrySet();
+	
+	LocalTime currentTime = LocalTime.curTime();
+	
+	for(Integer id : ids){
+		LocalTime tt= timeMap.get(id);
+		if(tt+(15*60*1000) >= currentTime){
+			timeMap.remove(id);
+			dataMap.remove(id);
+		}
+	}
+}
+}

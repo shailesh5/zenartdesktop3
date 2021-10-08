@@ -1,0 +1,37 @@
+class Employee{
+	private int empId;
+	private String firstName;
+	private String lastName;
+
+	// getters & Setters
+
+}
+
+
+public class EmpCache{
+
+	private LinkedHashSet<Employee> cache = null;
+	private int size;
+
+	public EmpCache(int size){
+		cache = new LinkedHashSet<Employee>(size);
+		this.size = size;
+	}
+	
+	public Employee get(int empId){
+		List<Employee> empList = cache.stream().filter(e -> e.getEmpId() == empId).collect(Collectors.toList());
+		
+		if(empList.isEmpty() && cache.size() == size){
+			Employee emp = cache.iterator().next();
+			cache.remove(emp);
+
+			Employee newObj = // get from database
+			cache.add(newObj);
+		}
+`		if(empList.isEmpty()  && cache.size() != size){
+			Employee newObj = // get from database
+			cache.add(newObj);
+		}
+		return empList.get(0);
+	}
+}

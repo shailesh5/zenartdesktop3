@@ -1,0 +1,43 @@
+)()())
+
+-> 4
+
+(()())
+
+-> 6
+
+()() ) ()(())
+
+-> 6
+
+)()(()
+-> 2
+
+
+    ) ( ) ( ( )
+-1  0 1 2 3 4 5  6
+index -> 6
+stack -> -1  0  3   6
+
+
+// stack as a data structure
+int[] not_participating_sum  = 0;
+for all element 
+	if ')'
+  	if stack empty
+    	not_participating_sum += index;
+    	
+
+// when '(' then push onto the stack
+// when ')' then check stack whether it is not empty
+// if it is not empty then pop and increment the counter value
+
+
+ char[] arr = {')','(',')','(',')', ')'};
+ Stack<Character> stack = new Stack<Character>();
+ 
+ int i = 0; 
+ whi
+ 
+ 
+ 

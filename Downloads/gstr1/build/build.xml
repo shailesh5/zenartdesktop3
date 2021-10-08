@@ -1,0 +1,73 @@
+<?xml version="1.0" ?> 
+<project name="ASP-GSTR1-API-PLATFORM" default="war">
+
+<property environment="env"/>
+<property name="build.working.directory" value="ASP-GSTR1-API-PLATFORM/gstr1"/>
+<property name="ProjRootDir" value="${env.WORKSPACE}/${build.working.directory}" />
+<property name="src.dir" value="${ProjRootDir}/src" />
+<property name="dist.dir" value="${ProjRootDir}/dist" />
+<property name="jboss.home" value="/home/udeploy/wildfly-9.0.1.Final/modules/system/layers/base"/>
+	<path id="compile.classpath">		
+	   <pathelement location="${src.dir}"/>
+			<fileset dir="${ProjRootDir}/WebContent/WEB-INF/lib">
+				<include name="*.jar"/>
+			</fileset>
+		<pathelement location="${jboss.home}"/>
+			<fileset dir="${jboss.home}/org/picketbox/main">
+				<include name="*.jar"/>
+			</fileset>	
+		
+        <pathelement location="${jboss.home}"/>
+			<fileset dir="${jboss.home}/javax/servlet/api/main">
+				<include name="*.jar"/>
+			</fileset> 			
+				
+	</path>
+	
+	<target name="clean" description="Deletes work directories">
+		<delete dir="${dist.dir}" />
+		<delete dir="${ProjRootDir}/WebContent/WEB-INF/classes" />
+	</target>
+	
+	<target name="prepare" depends="clean">
+		<echo message="Creates required directories"/>
+		<mkdir dir="${ProjRootDir}/WebContent/WEB-INF/classes"/>
+		<mkdir dir="${dist.dir}" />
+		<echo message="Java version ${ant.java.version}"/>
+		
+	</target>
+	
+	<target name="compile" depends="prepare">
+		<echo message="Compiles java servlets into class files"/>
+		<javac includeantruntime="false" 
+		srcdir="${src.dir}"
+		destdir="${ProjRootDir}/WebContent/WEB-INF/classes" debug="true">
+			<classpath refid="compile.classpath"/>
+		</javac>
+	</target>
+	
+	<target name="copy" depends="compile">
+		<echo message="copy the files from src to dest"/>
+		<mkdir dir="${ProjRootDir}/WebContent/WEB-INF/classes/com/jio/asp/gstr1/common/resources"/>
+		<mkdir dir="${ProjRootDir}/WebContent/WEB-INF/classes/com/jio/asp/gstr1/v30/resources"/>
+		<mkdir dir="${ProjRootDir}/WebContent/WEB-INF/classes/com/jio/asp/gstr1/v31/resources"/>
+		<copy file="${src.dir}/logback.xml" todir="${ProjRootDir}/WebContent/WEB-INF/classes"/>
+		<copy file="${ProjRootDir}/config/gstr1application.properties" todir="${ProjRootDir}/WebContent/WEB-INF/classes"/>
+		<!--<copy file="${ProjRootDir}/config/application.properties" todir="${ProjRootDir}/WebContent/WEB-INF/classes"/>
+		<copy file="${ProjRootDir}/config/errorsolution.properties" todir="${ProjRootDir}/WebContent/WEB-INF/classes"/> -->
+		<copy file="${ProjRootDir}/src/com/jio/asp/gstr1/common/resources/comnmessages.properties" todir="${ProjRootDir}/WebContent/WEB-INF/classes/com/jio/asp/gstr1/common/resources"/>
+		<copy file="${ProjRootDir}/src/com/jio/asp/gstr1/v30/resources/messages.properties" todir="${ProjRootDir}/WebContent/WEB-INF/classes/com/jio/asp/gstr1/v30/resources"/>
+		<copy file="${ProjRootDir}/src/com/jio/asp/gstr1/v31/resources/messagesV31.properties" todir="${ProjRootDir}/WebContent/WEB-INF/classes/com/jio/asp/gstr1/v31/resources"/>
+	</target> 
+	 
+	
+	<target name="war" depends="copy">
+		<echo message="Packages artifacts into a deployable WAR"/>
+		<war destfile="${dist.dir}/gstr1.war" webxml="${ProjRootDir}/WebContent/WEB-INF/web.xml">
+			
+			<fileset dir="${ProjRootDir}/WebContent"/>
+	
+		</war>
+	</target>
+	
+</project>

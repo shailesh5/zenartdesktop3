@@ -1,0 +1,148 @@
+<?xml version="1.0" ?> 
+<!--Comment Added-->
+<project xmlns:ram="antlib:com.ibm.ram.ant" name="Asset upload of ASP-GSTR1-API-PLATFORM component in GSP application" default="publish">
+
+<property environment="env"/>
+
+<property file="publish.properties"/>
+<property name="build.working.directory" value="ASP-GSTR1-API-PLATFORM/gstr1"/>
+<property name="build.directory" value="dist" />
+
+<property name="build.working.directory.absolute" value="${env.WORKSPACE}/${build.working.directory}" />
+
+<tstamp>
+      <format property="current.time" pattern="yyyyMMdd-HHmmss"  locale="en,UK" />
+</tstamp>
+
+<property name="ram.lib.dir" value="/home/udeploy/ramclient"/>        
+        <patternset id="ram.classpath.patternset">
+            <include name="*.jar"/>
+        </patternset>        
+        <path id="ram.classpath">
+            <fileset dir="${ram.lib.dir}">
+                <patternset refid="ram.classpath.patternset"/>
+            </fileset>
+        </path>
+		
+
+		<taskdef resource="net/sf/antcontrib/antcontrib.properties"/>
+	 
+		 <taskdef uri="antlib:com.ibm.ram.ant" resource="com/ibm/ram/ant/antlib.xml">
+            <classpath refid="ram.classpath" />
+        </taskdef>
+
+	<!--property name="userId" value="Administrator" /-->
+	<!--property name="password" value="Passw0rd" /-->
+	
+<dirname file="${ant.file}" property="buildfile.dir"/>
+<import file="${buildfile.dir}/ramServer.xml"/>
+
+<target name="copy" depends="ramserver">
+	<mkdir dir="${build.working.directory.absolute}/dist/config" />
+	<echo message="copy the files from config to dest"/>
+		<copy todir="${build.working.directory.absolute}/dist/config">
+			<fileset dir="${build.working.directory.absolute}/config"/>
+		</copy>
+	<!--<echo message="copy the files from DBScripts to dist"/>
+		<copy todir="${build.working.directory.absolute}/dist/DBScripts">
+			<fileset dir="${build.working.directory.absolute}/DBScripts"/>
+		</copy>-->	
+</target>
+
+<target name="prereq" depends="ramserver,copy" description="Verify required properties are set">
+<!--<fail message="[buildLabel] property is not set" unless="buildLabel"/>-->
+	<echo message="Jenkin Current Working Directory : ${env.WORKSPACE}" />
+	<echo message="Job Name : ${env.JOB_NAME}" />
+	<echo message="Absolute Working Directory : ${build.working.directory.absolute}" />
+<fail message="[ram.asset.community] property is not set" unless="ram.asset.community"/>
+<fail message="[ram.asset.type] property is not set" unless="ram.asset.type"/>
+<fail message="[ram.asset.shortDescription] property is not set" unless="ram.asset.shortDescription"/>
+<fail message="[ram.asset.description] property is not set" unless="ram.asset.description"/>
+<fail message="[ram.asset.artifacts] property is not set" unless="ram.asset.artifacts"/>
+<!--<fail message="[ram.asset.state] property is not set" unless="ram.asset.state"/>-->
+  	<zip	destfile="${build.working.directory.absolute}/ramasset/${current.time}.zip"
+					basedir="${build.working.directory.absolute}/${build.directory}"
+					excludes=".zip"	/>
+<echo message="RAM Server: uid=${ram.user.id}, url=${ram.url}"/>
+<echo message="RAM Asset: ${ram.asset.name}/${current.time}"/>
+</target>
+
+<target name="publish" depends="prereq">
+<ram:modify>
+<ram:server refID="${ramServerID}"/>
+<ram:search name="${ram.asset.name}" version="${current.time}"/>
+<ram:asset>
+<ram:name>${ram.asset.name}</ram:name>
+<ram:version>${current.time}</ram:version>
+<ram:community>${ram.asset.community}</ram:community>
+<ram:assetType>${ram.asset.type}</ram:assetType>
+<ram:guid>${ram.asset.guid}</ram:guid>
+
+
+<!--
+ Add all of the dependency assets, as noted in ramDownloadArtifactLinks.xml. 
+-->
+<!-- <ram:relatedAssetList replace="ByRelationshipType">${ram.relatedAssets}</ram:relatedAssetList>-->
+<!--
+				
+				<ram:relatedAsset type="implementation for">
+					<ram:asset guid="${ram.release.guid}" 
+
+version="${ram.release.version}" />
+				</ram:relatedAsset>
+				
+-->
+<ram:artifactSet src="${build.working.directory.absolute}/ramasset/${current.time}.zip">
+<!--
+ Create artifact references to the artifacts in the .zip file above with the following properties. 
+-->
+<!--ram:reference-->
+<!--ram:description-->
+<!--BUILD_LABEL = ${buildLabel}
+ BUILD_URL = <a href='${buildLabel}' target='_blank' > Build Info</a>
+ SOURCE_REPOSITORY_ADDRESS = <a href='${repositoryAddress}' target='_blank' > Source Repository</a>
+ BUILD_RESULT_UUID = ${buildResultUUID}
+ BUILD_DEFINITION_ID = ${buildDefinitionId}-->
+<!--/ram:description-->
+<!--  Set the reference kind to "build reference."  -->
+<!--ram:kind>com.ibm.ram.reference.build</ram:kind-->
+<!--ram:value/-->
+<!--/ram:reference-->
+</ram:artifactSet>
+<ram:shortDescription>${ram.asset.shortDescription}</ram:shortDescription>
+<ram:description>${ram.asset.description}</ram:description>
+<!-- <ram:state>${ram.asset.state}</ram:state> -->
+<!--
+<ram:attribute name="State">
+<ram:value>${ram.asset.state}</ram:value>
+</ram:attribute> -->
+<!--ram:attribute name="Vendor">
+<ram:value>${ram.asset.vendor}</ram:value>
+</ram:attribute-->
+<!--ram:attribute name="Release">
+<ram:value>${ram.asset.release}</ram:value>
+</ram:attribute-->
+<!--ram:attribute name="Sprint">
+<ram:value>${ram.asset.sprint}</ram:value>
+</ram:attribute-->
+<!--ram:attribute name="Release Type">
+<ram:value>${ram.asset.releasetype}</ram:value>
+</ram:attribute-->
+<!--ram:attribute name="ECR Number">
+<ram:value>${ram.asset.ecr}</ram:value>
+</ram:attribute-->
+
+</ram:asset>
+</ram:modify>
+<echo message="Submitted asset with guid=${ram.asset.guid} and version=${current.time}"/>
+<echo message="RAM Asset URL: ${ram.url}/oslc/assets/${ram.asset.guid}/${current.time}"/>
+</target>
+
+
+  
+<!-- <project name="JPetStore" default="all" basedir="."> -->
+
+
+  <!-- <target name="all" depends="test.report, coverage.report, war"/> -->
+
+</project>

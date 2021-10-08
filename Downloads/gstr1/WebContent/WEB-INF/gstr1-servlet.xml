@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:cassandra="http://www.springframework.org/schema/data/cassandra"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:c='http://www.springframework.org/schema/c'
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:int-kafka="http://www.springframework.org/schema/integration/kafka"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="
+    http://www.springframework.org/schema/mvc 
+    http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+	http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-4.0.xsd
+	http://www.springframework.org/schema/data/mongo
+	http://www.springframework.org/schema/data/mongo/spring-mongo-1.0.xsd
+	http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+	http://www.springframework.org/schema/data/cassandra
+	http://www.springframework.org/schema/data/cassandra/spring-cassandra-1.0.xsd
+	http://www.springframework.org/schema/jee 
+	http://www.springframework.org/schema/jee/spring-jee-4.0.xsd
+	http://www.springframework.org/schema/integration/kafka 
+	http://www.springframework.org/schema/integration/kafka/spring-integration-kafka.xsd
+	http://www.springframework.org/schema/integration 
+	http://www.springframework.org/schema/integration/spring-integration.xsd
+	http://www.springframework.org/schema/task 
+	http://www.springframework.org/schema/task/spring-task.xsd">
+	<import resource="gstr1-config-V31.xml" />
+	<context:component-scan base-package="com.jio.asp.gstr1"></context:component-scan>
+	<mvc:annotation-driven/>
+
+	<mvc:interceptors>
+		<bean class="com.jio.asp.gstr1.common.intercept.Gstr1Interceptor" />
+	</mvc:interceptors>
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix">
+			<value></value>
+		</property>
+		<property name="suffix">
+			<value>.jsp</value>
+		</property>
+	</bean>
+	<bean id="restTemplate" class="org.springframework.web.client.RestTemplate"></bean>
+	<tx:annotation-driven transaction-manager="transactionManager" />
+	<!-- Message property resolver and reader starts -->
+	<context:property-placeholder location="${GSTR1_APP_PROP_PATH_EXT}" />
+	<bean id="gstnResource"
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basename" value="${GSTR1_APP_PROP_FILE_PATH}" />
+	</bean>
+	<bean name="handlerMapping"
+		class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping">
+		<property name="interceptors">
+			<ref bean="localeChangeInterceptor" />
+		</property>
+	</bean>
+	<bean id="localeResolver"
+		class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
+		<property name="defaultLocale" value="en" />
+	</bean>
+	<bean id="localeChangeInterceptor"
+		class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+		<property name="paramName" value="language" />
+	</bean>
+	<!-- Common Message Property file -->
+	<bean id="cmmnMessageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basename" value="com/jio/asp/gstr1/common/resources/comnmessages" />
+	</bean>
+	<!-- Common Message Property file -->
+	<!-- Version 3.0 Message Property file -->
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basename" value="com/jio/asp/gstr1/v30/resources/messages" />
+	</bean>
+	<!-- Version 3.0 Message property resolver and reader ends -->
+
+	<!-- Thread pool configuration -->
+	<task:annotation-driven />
+	<bean id="taskExecutor"
+		class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+		<property name="corePoolSize" value="20" />
+		<property name="maxPoolSize" value="500" />
+		<property name="queueCapacity" value="400" />
+		<property name="threadNamePrefix" value="Background-Write-"></property>
+	</bean>
+	<!-- <task:annotation-driven executor="taskExecutor"/> -->
+
+	<!-- Redis Connection Factory -->
+	<bean id="jedisConnFactory"
+		class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"
+		p:use-pool="true" p:host-name="${app.config.redis.host}" p:port="${app.config.redis.port}"
+		p:password="${app.config.redis.password}" />
+	<!-- Redis Template Configuration -->
+
+
+	<bean class="org.springframework.data.redis.core.RedisTemplate"
+		id="redisTemplate" p:connection-factory-ref="jedisConnFactory" />
+
+
+<bean id="aspErrorBean" 
+      class="com.jio.asp.validation.AspErrorCodes" init-method="initErrorMap"> 
+      <property name="filePath" value="${GSTR1_APP_ERROR_CODE_FILE_PATH}"></property> 
+        </bean>
+
+
+</beans>

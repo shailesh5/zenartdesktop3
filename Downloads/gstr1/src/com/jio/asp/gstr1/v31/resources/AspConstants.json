@@ -1,0 +1,1487 @@
+{
+	"status_cd": {
+    "BAD_REQ": "400",
+    "INT_SERVER": "500"
+  },
+  "status_msg": {
+    "BAD_REQ": "Bad Request",
+    "INT_SERVER": "Internal Server Error"
+  },
+  "err_sys": {
+    "ASP": "JIOGST_ASP_API",
+    "GSP": "JIOGST_GSP_API"
+  },
+  "err_grp": {
+    "JIOGST_SAVE": "JIOGST_SAVE",
+    "JIOGST_HEADER": "JIOGST_HEADER",
+    "JIOGST_L0": "JIOGST_L0",
+    "JIOGST_L2": "JIOGST_L2",
+	"JIOGST_L0_L2": "JIOGST_L0_L2",
+    "JIOGST_RET": "JIOGST_RET",
+	"JIOGST_SYNC":"JIOGST_SYNC",
+    "GSTN_SAVE": "GSTN_SAVE",
+    "GSTN_HEADER": "GSTN_HEADER",
+    "GSTN_L0": "GSTN_L0",
+    "GSTN_L2": "GSTN_L2",
+	"GSTN_L0_L2": "GSTN_L0_L2",
+    "GSTN_RET": "GSTN_RET",
+    "GSTN_SUBMIT": "GSTN_SUBMIT",
+    "GSTN_FILE": "GSTN_FILE",
+    "ASP_GET":"ASP_GET",
+    "GSTN_BULK_OPERATION": "GSTN_BULK_OPERATION"
+  },
+"err": {
+"err_cd": "01022",
+"dev_msg": "Error occured in validation of the input data.",
+"usr_act": "Please correct the data and retry the action.",
+"usr_msg": "Error occured in validation of the input data.",
+"msg": "Pleasr provide valid value: INTRA / INTER"
+},
+"010000": {
+    "dev_msg": "API Call Success",
+    "usr_act": "",
+    "usr_msg": " "
+  },
+  "011001": {
+    "dev_msg": "Invalid aspclient-id,the length should be between 18-20,aspclient-id cannot be blank",
+    "usr_act": "Invalid aspclient-id,the length should be between 18-20,aspclient-id cannot be blank",
+    "usr_msg": "Invalid aspclient-id,Please provide valid aspclient-id, the length should be between 18-20,aspclient-id cannot be blank"
+  },
+  "011002": {
+    "dev_msg": "Invalid asp-clientsecretkey,asp-clientsecretkey cannot be blank",
+    "usr_act": "Invalid asp-clientsecretkey,asp-clientsecretkey cannot be blank",
+    "usr_msg": "Invalid asp-clientsecretkey,Please provide valid asp-clientsecretkey,asp-clientsecretkey cannot be blank"
+  },
+  "011003": {
+    "dev_msg": "Invalid source-device,the length should be between 5-36,source-device cannot be blank",
+    "usr_act": "Invalid source-device,the length should be between 5-36,source-device cannot be blank",
+    "usr_msg": "Invalid source-device,Please provide valid source-device,the length should be between 5-36,source-device cannot be blank"
+  },
+  "011004": {
+    "dev_msg": "Invalid Location,the length should be between 3-20,Location cannot be blank",
+    "usr_act": "Invalid Location,the length should be between 3-20,Location cannot be blank",
+    "usr_msg": "Invalid Location,Please provide valid location,the length should be between 3-20,Location cannot be blank"
+  },
+  "011005": {
+    "dev_msg": "Invalid app-code,the length should be between 3-36,app-code cannot be blank",
+    "usr_act": "Invalid app-code,the length should be between 3-36,app-code cannot be blank",
+    "usr_msg": "Invalid app-code,Please provide valid app-code,the length should be between 3-36,app-code cannot be blank"
+  },
+  "011006": {
+    "dev_msg": "Invalid txn,the length should be between 5-36,txn cannot be blank",
+    "usr_act": "Invalid txn,the length should be between 5-36,txn cannot be blank",
+    "usr_msg": "Invalid txn,Please provide valid txn,the length should be between 5-36,txn cannot be blank"
+  },
+  "011007": {
+    "dev_msg": "Invalid ip-usr,the length should be between 3-36,ip-usr cannot be blank",
+    "usr_act": "Invalid ip-usr,the length should be between 3-36,ip-usr cannot be blank",
+    "usr_msg": "Invalid ip-usr,Please provide valid ip-usr,the length should be between 3-36,ip-usr cannot be blank"
+  },
+  "010008": {
+    "dev_msg": "Invalid state-code,POS is any other value apart from values prespecified in the reference sheet(0-37 or 97)",
+    "usr_act": "Invalid state-code,POS is any other value apart from values prespecified in the reference sheet(0-37 or 97)",
+    "usr_msg": "Invalid state-code,POS is any other value apart from values prespecified in the reference sheet(0-37 or 97),Please Provide valid state-code"
+  },
+  "011009": {
+    "dev_msg": "Invalid state-code,State-code cannot be null,Please provide state-code as per the prespecified reference sheet(0-37 or 97)",
+    "usr_act": "Invalid state-code,State-code cannot be null,Please provide state-code as per the prespecified reference sheet(0-37 or 97)",
+    "usr_msg": "Invalid state-code,State-code cannot be null,Please provide state-code as per the prespecified reference sheet(0-37 or 97)"
+  },
+  "011010": {
+    "dev_msg": "Invalid device-string,the length should be between 5-36,device-string cannot be blank",
+    "usr_act": "Invalid device-string,the length should be between 5-36,device-string cannot be blank",
+    "usr_msg": "Invalid device-string,Please provide valid device-string,the length should be between 5-36,device-string cannot be blank"
+  },
+  "011011": {
+    "dev_msg": "Invalid ackNo,ackNo cannot be null",
+    "usr_act": "Invalid ackNo,ackNo cannot be null",
+    "usr_msg": "Invalid ackNo,ackNo cannot be null,Please provide valid axkNo"
+  },
+  "011012": {
+    "dev_msg": "Invalid sek,sek cannot be null",
+    "usr_act": "Invalid sek,sek cannot be null",
+    "usr_msg": "Invalid sek,sek cannot be null,Please provide valid sek"
+  },
+  "011013": {
+    "dev_msg": "Invalid appkey,appkey cannot be null",
+    "usr_act": "Invalid appkey,appkey cannot be null",
+    "usr_msg": "Invalid appkey,appkey cannot be null,Please provide valid appkey"
+  },
+  "011014": {
+    "dev_msg": "Invalid auth-token,auth-token cannot be null",
+    "usr_act": "Invalid auth-token,auth-token cannot be null",
+    "usr_msg": "Invalid auth-token,auth-token cannot be null,Please provide valid auth-token"
+  },
+  "011015": {
+    "dev_msg": "Invalid username,username cannot be null",
+    "usr_act": "Invalid username,username cannot be null",
+    "usr_msg": "Invalid username,username cannot be null,Please provide valid username"
+  },
+   "011016": {
+    "dev_msg": "Not Authorized: Invalid Client Id/Secret Key, it is not active any more",
+    "usr_act": "Not Authorized: Invalid Client Id/Secret Key, it is not active any more",
+    "usr_msg": "Not Authorized: Invalid Client Id/Secret Key, please check it is not active any more"
+  },
+  
+  "011017": {
+    "dev_msg": "Not Authorized: Gstin is not registered with the Client Id",
+    "usr_act": "Not Authorized: Gstin is not registered with the Client Id",
+    "usr_msg": "Not Authorized: Gstin is not registered with the Client Id"
+  },
+
+   "011018": {
+    "dev_msg": "Validation Failed: Gstin in Api header and request params does not match",
+    "usr_act": "Validation Failed: Gstin in Api header and request params does not match",
+    "usr_msg": "Validation Failed: Gstin in Api header and request params does not match"
+  }
+  ,
+
+   "011020": {
+    "dev_msg": "Validation Failed: Gstin in Api header cannot be null",
+    "usr_act": "Validation Failed: Gstin in Api header cannot be null",
+    "usr_msg": "Validation Failed: Gstin in Api header cannot be null"
+  },
+  
+   "011021": {
+    "dev_msg": "Validation Failed: Gstin in Api header and Payload does not match",
+    "usr_act": "Validation Failed: Gstin in Api header and Payload does not match",
+    "usr_msg": "Validation Failed: Gstin in Api header and Payload does not match"
+  },
+  
+  "011022": {
+    "dev_msg": "Unable to parse the payload, there seems to be some structural issue in the input data.",
+    "usr_act": "Unable to parse the payload, there seems to be some structural issue in the input data.",
+    "usr_msg": "Unable to parse the payload, there seems to be some structural issue in the input data."
+  },
+   "011019": {
+    "dev_msg": "Validation Failed: Header cannot be null",
+    "usr_act": "Validation Failed: Header cannot be null",
+    "usr_msg": "Validation Failed: Header cannot be null"
+  },
+  
+"010021": {
+"dev_msg": "Please provide valid value: R-Regular/RR-ReverseCharge Registered/RU-ReverseCharge Unregistered/IS-Import of service",
+"usr_act": "Please provide valid value: R-Regular/RR-ReverseCharge Registered/RU-ReverseCharge Unregistered/IS-Import of service",
+"usr_msg": "Please provide valid value: R-Regular/RR-ReverseCharge Registered/RU-ReverseCharge Unregistered/IS-Import of service"
+},
+"010022": {
+"dev_msg": "Type of Supply is Null / Invalid",
+"usr_act": "Pleasr provide valid value: INTRA / INTER",
+"usr_msg": "Type of supply can't be null or is invalid, (valid value: INTRA / INTER)"
+},
+"011023": {
+"dev_msg": " Value/rate issue",
+"usr_act": "Value/rate issue",
+"usr_msg": "Value/rate issue"
+},
+"011024": {
+"dev_msg": "GSTIN/CTIN length doesn't match the requirement - lesser than 15",
+"usr_act": "Please provide valid GSTIN and retry",
+"usr_msg": "GSTIN/CTIN length can't be lesser than 15 chars"
+},
+"011025": {
+"dev_msg": "GSTIN/CTIN length doesn't match the requirement - greater than 15",
+"usr_act": "Please provide valid GSTIN and retry",
+"usr_msg": " GSTN/CTIN length can't be greater than 15 chars"
+},
+"011026": {
+"dev_msg": "GSTIN/CTIN first 2 characters is not digit",
+"usr_act": "GSTIN/CTIN first 2 characters is not digit",
+"usr_msg": "GSTIN/CTIN first 2 characters is not digit"
+},
+"011027": {
+"dev_msg": "PAN of GSTIN of Supplier is not of correct format",
+"usr_act": "PAN of GSTIN of Supplier is not of correct format",
+"usr_msg": " PAN of GSTIN of Supplier is not of correct format"
+},
+"010028": {
+"dev_msg": " GSTIN of supplier is same as user's GSTIN",
+"usr_act": "GSTIN of supplier is same as user's GSTIN",
+"usr_msg": "  GSTIN of supplier is same as user's GSTIN"
+},
+"010029": {
+"dev_msg": " GSTIN is not mentioned for R/RR type of invoices",
+"usr_act": "GSTIN is not mentioned for R/RR type of invoices",
+"usr_msg": "   GSTIN is not mentioned for R/RR type of invoices"
+},
+"010030": {
+"dev_msg": " GSTIN is mentioned for RU/IS type of invoices",
+"usr_act": "GSTIN is mentioned for RU/IS type of invoices",
+"usr_msg": "  GSTIN is mentioned for RU/IS type of invoices"
+},
+"011031": {
+"dev_msg": " GSTIN of Supplier is NULL",
+"usr_act": "GSTIN of Supplier is NULL",
+"usr_msg": " GSTIN of Supplier is NULL"
+},
+"011032": {
+"dev_msg": "GSTIN of Supplier is less than 15 characters.",
+"usr_act": "GSTIN of Supplier is less than 15 characters.",
+"usr_msg": "GSTIN of Supplier is less than 15 characters."
+},
+"011033": {
+"dev_msg": "GSTIN of Supplier is more than 15 characters.",
+"usr_act": "GSTIN of Supplier is more than 15 characters.",
+"usr_msg": "GSTIN of Supplier is more than 15 characters."
+},
+"011034": {
+"dev_msg": "Original invoice no. is NULL",
+"usr_act": "Original invoice no. is NULL",
+"usr_msg": "Original invoice no. is NULL"
+},
+"011035": {
+"dev_msg": "Original invoice number is more than 16 characters.",
+"usr_act": "Original invoice number is more than 16 characters.",
+"usr_msg": "Original invoice number is more than 16 characters."
+},
+"011036": {
+"dev_msg": "Original invoice date is not of the format DD-MM-YYYY",
+"usr_act": "Original invoice date is not of the format DD-MM-YYYY",
+"usr_msg": "Original invoice date is not of the format DD-MM-YYYY"
+},
+"010037": {
+"dev_msg": "Original invoice date is of future",
+"usr_act": "Original invoice date is of future",
+"usr_msg": "Original invoice date is of future"
+},
+"010038": {
+"dev_msg": "Original invoice date is older than 18 months",
+"usr_act": "Original invoice date is older than 18 months",
+"usr_msg": "Original invoice date is older than 18 months"
+},
+"010039": {
+"dev_msg": "Original invoice date is greater than Note date",
+"usr_act": "Original invoice date is greater than Note date",
+"usr_msg": "Original invoice date is greater than Note date"
+},
+"011040": {
+"dev_msg": "Invoice number is NULL",
+"usr_act": "Invoice number is NULL",
+"usr_msg": "Invoice number is NULL"
+},
+"011041": {
+"dev_msg": "Invoice number has special characters",
+"usr_act": "Invoice number has special characters",
+"usr_msg": "Invoice number has special characters"
+},
+"011042": {
+"dev_msg": "Invoice number is more than 16 characters",
+"usr_act": "Invoice number is more than 16 characters",
+"usr_msg": "Invoice number is more than 16 characters"
+},
+"010043": {
+"dev_msg": "File with the same invoice number is uploaded",
+"usr_act": "File with the same invoice number is uploaded",
+"usr_msg": "File with the same invoice number is uploaded"
+},
+"011044": {
+"dev_msg": "Invoice date is NULL",
+"usr_act": "Invoice date is NULL",
+"usr_msg": "Invoice date is NULL"
+},
+"011045": {
+"dev_msg": "Invoice date/Note Date is not of the format DD-MM-YYYY",
+"usr_act": "Invoice date is not of the format DD-MM-YYYY",
+"usr_msg": "Invoice date is not of the format DD-MM-YYYY"
+},
+"010046": {
+"dev_msg": "Invoice date is of future",
+"usr_act": "Invoice date is of future",
+"usr_msg": "Invoice date is of future"
+},
+"010047": {
+"dev_msg": "Invoice date is older than 18 months",
+"usr_act": "Invoice date is older than 18 months",
+"usr_msg": "Invoice date is older than 18 months"
+},
+"011048": {
+"dev_msg": "Invoice/Note value is null",
+"usr_act": "Invoice/Note value is null",
+"usr_msg": "Invoice/Note value is null"
+},
+"011049": {
+"dev_msg": "Invoice/Note value is Negative",
+"usr_act": "Invoice/Note value is Negative",
+"usr_msg": "Invoice/Note value is Negative"
+},
+"011050": {
+"dev_msg": "Invoice/Note Value is not in decimal format",
+"usr_act": "Invoice/Note Value is not in decimal format",
+"usr_msg": "Invoice/Note Value is not in decimal format"
+},
+"011051": {
+"dev_msg": "Invoice/Note value has more than 2 decimal places",
+"usr_act": "Invoice/Note value has more than 2 decimal places",
+"usr_msg": "Invoice/Note value has more than 2 decimal places"
+},
+"011052": {
+"dev_msg": "Integrated tax rate is more than 2 places of decimal",
+"usr_act": "Integrated tax rate is more than 2 places of decimal",
+"usr_msg": "Integrated tax rate is more than 2 places of decimal"
+},
+"011053": {
+"dev_msg": "Integrated tax is negative value",
+"usr_act": "Integrated tax is negative value",
+"usr_msg": "Integrated tax is negative value"
+},
+"010054": {
+"dev_msg": "Invalid Integrated Tax rate",
+"usr_act": "Please provide valid rate 0.00/0.25/3.00/5.00/12.00/18.00/28.00",
+"usr_msg": "Invalid Integrated Tax rate"
+},
+"011055": {
+"dev_msg": "Integrated tax rate is not in decimal format",
+"usr_act": "Integrated tax rate is not in decimal format",
+"usr_msg": "Integrated tax rate is not in decimal format"
+},
+"011056": {
+"dev_msg": "Integrated tax amount is more than 2 places of decimal",
+"usr_act": "Integrated tax amount is more than 2 places of decimal",
+"usr_msg": "Integrated tax amount is more than 2 places of decimal"
+},
+"011057": {
+"dev_msg": "Integrated tax amount is of negative value",
+"usr_act": "Integrated tax amount is of negative value",
+"usr_msg": "Integrated tax amount is of negative value"
+},
+"010058": {
+"dev_msg": "Integrated tax amount, central tax amount and state tax amount all have values",
+"usr_act": "Please provide either integrated tax amount or central and state tax amount.",
+"usr_msg": "Integrated tax amount, central tax amount and state tax amount all have values"
+},
+"010059": {
+"dev_msg": "If invoice type is IS and integrated tax amount is not mentioned",
+"usr_act": "For invoice type IS, integrated tax amount cannot be blank.",
+"usr_msg": "If invoice type is IS and integrated tax amount is not mentioned"
+},
+"011060": {
+"dev_msg": "Inetgrated tax amount is not in decimal format",
+"usr_act": "Inetgrated tax amount is not in decimal format",
+"usr_msg": "Inetgrated tax amount is not in decimal format"
+},
+"010061": {
+"dev_msg": "IGST or CGST/SGST/UTGST values are present at the same time",
+"usr_act": "Please provide either IGST or CGST/SGST/UTGST.",
+"usr_msg": "IGST or CGST /SGST/UTGST values are present at the same time"
+},
+"010062": {
+"dev_msg": "Integrated tax, central tax and state tax all have values",
+"usr_act": "Integrated tax, central tax and state tax all have values",
+"usr_msg": "Integrated tax, central tax and state tax all have values"
+},
+"011069": {
+"dev_msg": "Central Tax Amount is NULL",
+"usr_act": "Central Tax Amount is NULL",
+"usr_msg": "Central Tax Amount is NULL"
+},
+"011070": {
+"dev_msg": "Central  tax rate is more than 2 places of decimal",
+"usr_act": "Central  tax rate is more than 2 places of decimal",
+"usr_msg": "Central  tax rate is more than 2 places of decimal"
+},
+"011071": {
+"dev_msg": "Central tax has negative value",
+"usr_act": "Central tax has negative value",
+"usr_msg": "Central tax has negative value"
+},
+"010072": {
+"dev_msg": "Invalid central tax rate",
+"usr_act": "Please provide valid tax rate  0.00/0.125/1.50/2.50/6.00/9.00/14.00",
+"usr_msg": "Please provide valid tax rate  0.00/0.125/1.50/2.50/6.00/9.00/14.00"
+},
+"010073": {
+"dev_msg": "There is value in central tax rate and no value in state tax rate and vice versa",
+"usr_act": "Please provide state tax rate along with central tax rate.",
+"usr_msg": "Please provide state tax rate along with central tax rate."
+},
+"010074": {
+"dev_msg": "State+ central tax is mentioned when invoice type is IS",
+"usr_act": "For Invoice type IS state tax and central tax should not be entered.",
+"usr_msg": "State+ central tax is mentioned when invoice type is IS"
+},
+"011075": {
+"dev_msg": "Central tax amount is not in decimal format",
+"usr_act": "Central tax amount is not in decimal format",
+"usr_msg": "Central tax amount is not in decimal format"
+},
+"011076": {
+"dev_msg": "Central tax amount is more than 2 places of decimal",
+"usr_act": "Central tax amount is more than 2 places of decimal",
+"usr_msg": "Central tax amount is more than 2 places of decimal"
+},
+"011077": {
+"dev_msg": "Central tax amount is negative value",
+"usr_act": "Central tax amount is negative value",
+"usr_msg": "Central tax amount is negative value"
+},
+"010078": {
+"dev_msg": "state+ central tax amount is mentioned when invoice type is IS",
+"usr_act": "For Invoice type IS state tax amount and central tax amount should not be entered.",
+"usr_msg": "state+ central tax amount is mentioned when invoice type is IS"
+},
+"010079": {
+"dev_msg": "There is value in state tax amount and no value in central tax amount and viceversa",
+"usr_act": "Please provide central tax amount along with state tax amount and vice versa.",
+"usr_msg": "There is value in state tax amount and no value in central tax amount and viceversa"
+},
+"010080": {
+"dev_msg": "State+central tax rate has a value, state + central tax amount doesnӴ have value and viceversa",
+"usr_act": "Please provide values for both state and central tax rate as well as state and central tax amount.",
+"usr_msg": "State+central tax rate has a value, state + central tax amount doesnӴ have value and viceversa"
+},
+"011081": {
+"dev_msg": "State tax rate is more than 2 places of decimal",
+"usr_act": "State tax rate is more than 2 places of decimal",
+"usr_msg": "State tax rate is more than 2 places of decimal"
+},
+"011082": {
+"dev_msg": "State tax has negative value",
+"usr_act": "State tax has negative value",
+"usr_msg": "State tax has negative value"
+},
+"010083": {
+"dev_msg": "Invalid state tax rate",
+"usr_act": "Please provide valid tax rate 0.00/0.125/1.50/2.50/6.00/9.00/14.00",
+"usr_msg": "Please provide valid tax rate 0.00/0.125/1.50/2.50/6.00/9.00/14.00"
+},
+"011084": {
+"dev_msg": "State tax amount is not in decimal format",
+"usr_act": "State tax amount is not in decimal format",
+"usr_msg": "State tax amount is not in decimal format"
+},
+"011085": {
+"dev_msg": "State tax amount is more than 2 places of decimal",
+"usr_act": "State tax amount is more than 2 places of decimal",
+"usr_msg": "State tax amount is more than 2 places of decimal"
+},
+"011086": {
+"dev_msg": "State tax amount has negative value",
+"usr_act": "State tax amount has negative value",
+"usr_msg": "State tax amount has negative value"
+},
+"010087": {
+"dev_msg": "There is value in state tax rate and no value in central tax rate and viceversa",
+"usr_act": "There is value in state tax rate and no value in central tax rate and viceversa",
+"usr_msg": "There is value in state tax rate and no value in central tax rate and viceversa"
+},
+"011088": {
+"dev_msg": "State Tax Amount is NULL",
+"usr_act": "State Tax Amount is NULL",
+"usr_msg": "State Tax Amount is NULL"
+},
+"011089": {
+"dev_msg": "Aggregated tax amount has negative value",
+"usr_act": "Aggregated tax amount has negative value",
+"usr_msg": "Aggregated tax amount has negative value"
+},
+"011090": {
+"dev_msg": "Taxable value is more than 2 places of decimal",
+"usr_act": "Taxable value is more than 2 places of decimal",
+"usr_msg": "Taxable value is more than 2 places of decimal"
+},
+"011091": {
+"dev_msg": "Taxable value cannot be negative",
+"usr_act": "Taxable value cannot be negative value",
+"usr_msg": "Taxable value cannot be negative value"
+},
+"011092": {
+"dev_msg": "Taxable value is not in decimal format",
+"usr_act": "Taxable value is not in decimal format",
+"usr_msg": "Taxable value is not in decimal format"
+},
+"011093": {
+"dev_msg": "Taxable Value is NULL",
+"usr_act": "Taxable Value is NULL",
+"usr_msg": "Taxable Value is NULL"
+},
+"010094": {
+"dev_msg": "For multiple credit notes against one invoice, sum of taxable value is greater than invoice value",
+"usr_act": "For multiple credit notes against one invoice, sum of taxable value is greater than invoice value",
+"usr_msg": "For multiple credit notes against one invoice, sum of taxable value is greater than invoice value"
+},
+"010095": {
+"dev_msg": "For multiple credit notes against one invoice, taxable value and differential value is greater than in invoice value",
+"usr_act": "For multiple credit notes against one invoice, taxable value and differential value is greater than in invoice value",
+"usr_msg": "For multiple credit notes against one invoice, taxable value and differential value is greater than in invoice value"
+},
+"010096": {
+"dev_msg": "Invalid Aggrgated Tax rate for Txos",
+"usr_act": "Please provide valid rate 1.00/2.00/5.00",
+"usr_msg": "Please provide valid rate 1.00/2.00/5.00"
+},
+"010100": {
+"dev_msg": "Validation Failed: Flush value is empty/invalid",
+"usr_act": "Validation Failed: Flush value is empty/invalid",
+"usr_msg": "Validation Failed: Flush value is empty/invalid"
+},
+"010101": {
+"dev_msg": "Validation Failed: Action value is empty/invalid",
+"usr_act": "Validation Failed: Action value is empty/invalid",
+"usr_msg": "Validation Failed: Action value is empty/invalid"
+},
+"010102": {
+"dev_msg": "Empty/Invalid Filter Value Passed",
+"usr_act": "Empty/Invalid Filter Value Passed",
+"usr_msg": "Empty/Invalid Filter Value Passed"
+},
+"010103": {
+"dev_msg": "Transaction ID is missing",
+"usr_act": "Transaction ID is missing",
+"usr_msg": "Transaction ID is missing"
+},
+
+"011100": {
+"dev_msg": "Cess amount is not in decimal format",
+"usr_act": "Cess amount is not in decimal format",
+"usr_msg": "Cess amount is not in decimal format"
+},
+"011101": {
+"dev_msg": "Cess amount is more than 2 places of decimal",
+"usr_act": "Cess amount is more than 2 places of decimal",
+"usr_msg": "Cess amount is more than 2 places of decimal"
+},
+"011102": {
+"dev_msg": "Cess amount is negative value",
+"usr_act": "Cess amount is negative value",
+"usr_msg": "Cess amount is negative value"
+},
+"011103": {
+"dev_msg": "Place of Supply (State Code) is NULL",
+"usr_act": "Please provide valid state code.",
+"usr_msg": "Please provide valid state code."
+},
+"010104": {
+"dev_msg": "POS is any other value apart from values prespecified in the reference sheet",
+"usr_act": "Please provide valid state code prespecified in the reference sheet",
+"usr_msg": "POS is any other value apart from values prespecified in the reference sheet"
+},
+"010105": {
+"dev_msg": "Flag field does not have R or D or P value",
+"usr_act": "Flag should contain R or D or P value.",
+"usr_msg": "Flag field does not have R or D or P value"
+},
+"010106": {
+"dev_msg": "To validate that the system should set the value as the invoice value when the Vendor Invoice Value is NULL",
+"usr_act": "To validate that the system should set the value as the invoice value when the Vendor Invoice Value is NULL",
+"usr_msg": "To validate that the system should set the value as the invoice value when the Vendor Invoice Value is NULL"
+},
+"011107": {
+"dev_msg": "PURCH_REF contains Special Characters other than  /-",
+"usr_act": "Special characters other than /- are not allowed.",
+"usr_msg": "PURCH_REF contains Special Characters other than  /-"
+},
+"011108": {
+"dev_msg": "PURCH_REF has more than 50 characters",
+"usr_act": "PURCH_REF has more than 50 characters",
+"usr_msg": "PURCH_REF has more than 50 characters"
+},
+"011109": {
+"dev_msg": "PURCH_REF is not alphanumeric value",
+"usr_act": "PURCH_REF is not alphanumeric value",
+"usr_msg": "PURCH_REF is not alphanumeric value"
+},
+"011110": {
+"dev_msg": "Vendor type is NULL",
+"usr_act": "Vendor type is NULL",
+"usr_msg": "Vendor type is NULL"
+},
+"011112": {
+"dev_msg": "CDN type is NULL",
+"usr_act": "Note type cannot be blank",
+"usr_msg": "Note type cannot be blank"
+},
+"010111": {
+"dev_msg": "Vendor type is any other value apart from  R-Registered  UR -Unregistered",
+"usr_act": "Vendor type is any other value apart from  R-Registered  UR -Unregistered",
+"usr_msg": "Vendor type is any other value apart from  R-Registered  UR -Unregistered"
+},
+"010113": {
+"dev_msg": "CDN type is any other value apart from Credit Note - C  Debit Note - D",
+"usr_act": "CDN type is any other value apart from Credit Note - C  Debit Note - D",
+"usr_msg": "CDN type is any other value apart from Credit Note - C  Debit Note - D"
+},
+"011114": {
+"dev_msg": "Length of CDN type is more than 1",
+"usr_act": "Length of CDN type is more than 1",
+"usr_msg": "Length of CDN type is more than 1"
+},
+"011115": {
+"dev_msg": "Reason for Issuing Dr./ Cr. Notes is NULL",
+"usr_act": "Reason for Issuing Dr./ Cr. Notes is NULL",
+"usr_msg": "Reason for Issuing Dr./ Cr. Notes is NULL"
+},
+"010116": {
+"dev_msg": "\"Reason for Issuing Dr./ Cr. Notes is any other value apart from\n1. Sales Return\n2. Post Sales Discount\n3. Deficiency in service\n4. Correction in invoice\n5. Change in POS\n6. Finalization of Provisional assessment\n7. Others\"",
+"usr_act": "Reason for Issuing Dr./ Cr. Notes is any other value apart from 1. Sales Return 2. Post Sales Discount 3. Deficiency in service 4. Correction in invoice 5. Change in POS 6. Finalization of Provisional assessment 7. Others",
+"usr_msg": "Reason for Issuing Dr./ Cr. Notes is any other value apart from 01-Sales Return 02-Post Sales Discount 3-Deficiency in service 4-Correction in invoice 5-Change in POS 6-Finalization of Provisional assessment 7-Others"
+},
+"011117": {
+"dev_msg": "Length of Reason for Issuing Dr./ Cr. Notes is more than 50",
+"usr_act": "Length of Reason for Issuing Dr./ Cr. Notes is more than 50",
+"usr_msg": "Length of Reason for Issuing Dr./ Cr. Notes is more than 50"
+},
+"011118": {
+"dev_msg": "Pre GST Regime Dr./ Cr. Notes is NULL",
+"usr_act": "Pre GST Regime Dr./ Cr. Notes is NULL",
+"usr_msg": "Pre GST Regime Dr./ Cr. Notes is NULL"
+},
+"010119": {
+"dev_msg": "Pre GST Regime Dr./ Cr. Notes is any other value apart from\n1. Yes (Y) : No validation of  invoice details will be required, if field value is Y\n2. No (N)",
+"usr_act": "Pre GST Regime Dr./ Cr. Notes is any other value apart from\n1. Yes (Y) : No validation of  invoice details will be required, if field value is Y\n2. No (N)",
+"usr_msg": "Pre GST Regime Dr./ Cr. Notes is any other value apart from\n1. Yes (Y) : No validation of  invoice details will be required, if field value is Y\n2. No (N)"
+},
+"011120": {
+"dev_msg": "Note No is NULL",
+"usr_act": "Note No is NULL",
+"usr_msg": "Note No is NULL"
+},
+"011121": {
+"dev_msg": "Note No is more than 16 characters.",
+"usr_act": "Note No is more than 16 characters.",
+"usr_msg": "Note No is more than 16 characters."
+},
+"010122": {
+"dev_msg": "File with the same note number is uploaded",
+"usr_act": "File with the same note number is uploaded",
+"usr_msg": "File with the same note number is uploaded"
+},
+"011123": {
+"dev_msg": "Note No has special characters",
+"usr_act": "Note No has special characters",
+"usr_msg": "Note No has special characters"
+},
+"011124": {
+"dev_msg": "DN/CN Date is NULL",
+"usr_act": "DN/CN Date is NULL",
+"usr_msg": "DN/CN Date is NULL"
+},
+"011125": {
+"dev_msg": "DN/CN Date is not of the format DD-MM-YYYY",
+"usr_act": "DN/CN Date is not of the format DD-MM-YYYY",
+"usr_msg": "DN/CN Date is not of the format DD-MM-YYYY"
+},
+"010126": {
+"dev_msg": "DN/CN Date is of future",
+"usr_act": "DN/CN Date is of future",
+"usr_msg": "DN/CN Date is of future"
+},
+"010127": {
+"dev_msg": "DN/CN Date is before invoice date",
+"usr_act": "DN/CN Date is before invoice date",
+"usr_msg": "DN/CN Date is before invoice date"
+},
+"011128": {
+"dev_msg": "Note value is more than 2 places of decimal",
+"usr_act": "Note value is more than 2 places of decimal",
+"usr_msg": "Note value is more than 2 places of decimal"
+},
+"011129": {
+"dev_msg": "Note value is negative value",
+"usr_act": "Note value is negative value",
+"usr_msg": "Note value is negative value"
+},
+"011130": {
+"dev_msg": "Note value is not in decimal format",
+"usr_act": "Note value is not in decimal format",
+"usr_msg": "Note value is not in decimal format"
+},
+"011131": {
+"dev_msg": "Note Value is NULL",
+"usr_act": "Note Value is NULL",
+"usr_msg": "Note Value is NULL"
+},
+"010132": {
+"dev_msg": "",
+"usr_act": "Invoice Date can't be before 07/2017",
+"usr_msg": "Invoice Date can't be before 07/2017"
+},
+"011133": {
+"dev_msg": "",
+"usr_act": "Invoice number should not begin or end with special characters",
+"usr_msg": "Invoice number should not begin or end with special characters"
+},
+"011134": {
+"dev_msg": "",
+"usr_act": "Note number should not begin or end with special characters",
+"usr_msg": "Note number should not begin or end with special characters"
+},
+"010135": {
+"dev_msg": "",
+"usr_act": "Invalid POS, is neither < 38 nor = 97",
+"usr_msg": "Invalid POS, is neither < 38 nor = 97"
+},
+"011136": {
+"dev_msg": "",
+"usr_act": "POS can't be zero",
+"usr_msg": "POS can't be zero"
+},
+"011137": {
+"dev_msg": "",
+"usr_act": "Place Of Supply can't be blank",
+"usr_msg": "Place Of Supply can't be blank"
+},
+"011138": {
+"dev_msg": "",
+"usr_act": "Invalid Length of Place of Supply",
+"usr_msg": "Invalid Length of Place of Supply"
+},
+"010139": {
+"dev_msg": "",
+"usr_act": "Invalid FP and invoice date range",
+"usr_msg": "Invalid FP and invoice date range"
+},
+"010140": {
+"dev_msg": "",
+"usr_act": "FP and Invoice date not in compliance",
+"usr_msg": "FP and Invoice date not in compliance"
+},
+"010141": {
+"dev_msg": "",
+"usr_act": "Invalid FP and Note date range",
+"usr_msg": "Invalid FP and Note date range"
+},
+"011142": {
+"dev_msg": "Rate of tax is negative value",
+"usr_act": "Rate of tax is negative value",
+"usr_msg": "Rate of tax is negative value"
+},
+"011143": {
+"dev_msg": "Rate of tax is not in decimal format",
+"usr_act": "Rate of tax is not in decimal format",
+"usr_msg": "Rate of tax is not in decimal format"
+},
+"010144": {
+"dev_msg": "Invalid tax rate",
+"usr_act": "Please provide valid tax rate 1.00/2.00/5.00",
+"usr_msg": "Please provide valid tax rate 1.00/2.00/5.00"
+},
+"011145": {
+"dev_msg": "Note date is older than 18 months",
+"usr_act": "Note date is older than 18 months",
+"usr_msg": "Note date is older than 18 months"
+},
+"010146": {
+"dev_msg": "FP and Note date not in compliance",
+"usr_act": "FP and Note date not in compliance",
+"usr_msg": "FP and Note date not in compliance"
+},
+"010147": {
+"dev_msg": "",
+"usr_act": "For invoice type RU , CTIN should not be present. If Present, it is considered as B2B - Regular invoice with Rchrg",
+"usr_msg": "For invoice type RU , CTIN should not be present. If Present, it is considered as B2B - Regular invoice with Rchrg"
+},
+"010148": {
+"dev_msg": "",
+"usr_act": "Tax Rate/amount can't be less than zero",
+"usr_msg": "Tax Rate/amount can't be less than zero"
+},
+"010149": {
+"dev_msg": "",
+"usr_act": "While invoice type IS/IM, CGST/SGST can't be set (only IGST is valid) - please check",
+"usr_msg": "While invoice type IS/IM, CGST/SGST can't be set (only IGST is valid) - please check"
+},
+"011150": {
+"dev_msg": "Turnover is NULL",
+"usr_act": "Turnover is NULL",
+"usr_msg": "Turnover is NULL"
+},
+"011151": {
+"dev_msg": "Turnover is negative",
+"usr_act": "Turnover is negative",
+"usr_msg": "Turnover is negative"
+},
+"011152": {
+"dev_msg": "Turnover is not in decimal foarmat",
+"usr_act": "Turnover is not in decimal format",
+"usr_msg": "Turnover is not in decimal format"
+},
+"011153": {
+"dev_msg": "Turnover has more than 2 decimal places",
+"usr_act": "Turnover has more than 2 decimal places",
+"usr_msg": "Turnover has more than 2 decimal places"
+},
+"011154": {
+"dev_msg": "",
+"usr_act": "Invalid Action passed, valid value (R)- Replace and (D) Delete",
+"usr_msg": "Invalid Action passed, valid value (R)- Replace and (D) Delete"
+},
+"011155": {
+"dev_msg": "",
+"usr_act": "Please check the length of tax amounts(can't be more than 15 digits before decimal point)",
+"usr_msg": "Please check the length of tax amounts(can't be more than 15 digits before decimal point)"
+},
+"011156": {
+"dev_msg": "",
+"usr_act": "Invalid Length of custom value",
+"usr_msg": "Invalid Length of custom value"
+},
+"011157": {
+"dev_msg": "",
+"usr_act": "Given custom value is not an Alphanumeric",
+"usr_msg": "Given custom value is not an Alphanumeric"
+},
+"011158": {
+"dev_msg": "",
+"usr_act": "Given custom value is not correct please check any special charecters added other than (- and /)",
+"usr_msg": "Given custom value is not correct please check any special charecters added other than (- and /)"
+},
+"011159": {
+"dev_msg": "",
+"usr_act": "Given custom value has special characters, please check(will accept only - and /)",
+"usr_msg": "Given custom value has special characters, please check(will accept only - and /)"
+},
+"011160": {
+"dev_msg": "Invalid sales type",
+"usr_act": "Sales type does not contain alphanumeric or - or /",
+"usr_msg": "Sales type does not contain alphanumeric or - or /"
+},
+"011161": {
+"dev_msg": "Sales type has more than 20 characters",
+"usr_act": "Sales type has more than 20 characters",
+"usr_msg": "Sales type has more than 20 characters"
+},
+"011162": {
+"dev_msg": "Sales type is NULL",
+"usr_act": "Sales type is NULL",
+"usr_msg": "Sales type is NULL"
+},
+"011163": {
+"dev_msg": "Type of Supply is NULL",
+"usr_act": "Type of Supply is NULL",
+"usr_msg": "Type of Supply is NULL"
+},
+"010164": {
+"dev_msg": "Invalid type of supply",
+"usr_act": "Please provide valid type of supply  INTER/ INTRA",
+"usr_msg": "Please provide valid type of supply  INTER/ INTRA"
+},
+"011165": {
+"dev_msg": "Type of advance is NULL",
+"usr_act": "Type of advance is NULL",
+"usr_msg": "Type of advance is NULL"
+},
+"010166": {
+"dev_msg": "Invalid type of supply",
+"usr_act": "Please provide valid type of supply Advance Paid -(P)/Advance Adjusted -(A)",
+"usr_msg": "Please provide valid type of supply Advance Paid -(P)/Advance Adjusted -(A)"
+},
+"010167": {
+"dev_msg": "IGST is not mentioned when POS is different from the location of recipeint",
+"usr_act": "IGST is not mentioned when POS is different from the location of recipeint",
+"usr_msg": "IGST is not mentioned when POS is different from the location of recipeint"
+},
+"011168": {
+"dev_msg": "Gross total value is more than 2 places of decimal",
+"usr_act": "Gross total value is more than 2 places of decimal",
+"usr_msg": "Gross total value is more than 2 places of decimal"
+},
+"011169": {
+"dev_msg": "Gross total value is of negative value",
+"usr_act": "Gross total value is of negative value",
+"usr_msg": "Gross total value is of negative value"
+},
+"011170": {
+"dev_msg": "Gross total value is not in decimal format",
+"usr_act": "Gross total value is not in decimal format",
+"usr_msg": "Gross total value is not in decimal format"
+},
+"011171": {
+"dev_msg": "Gross total value is NULL",
+"usr_act": "Gross total value is NULL",
+"usr_msg": "Gross total value is NULL"
+},
+"010172": {
+"dev_msg": "Gross total value is zero",
+"usr_act": "Gross total value is zero",
+"usr_msg": "Gross total value is zero"
+},
+"010173": {
+"dev_msg": "",
+"usr_act": "GSTIN/CTIN : State Code is neither < 38 nor = 97",
+"usr_msg": "GSTIN/CTIN : State Code is neither < 38 nor = 97"
+},
+"011174": {
+"dev_msg": "",
+"usr_act": "GSTIN/CTIN: State code is not numeric",
+"usr_msg": "GSTIN/CTIN: State code is not numeric"
+},
+"011175": {
+"dev_msg": "",
+"usr_act": "GSTIN/CTIN : State Code can't be 00",
+"usr_msg": "GSTIN/CTIN : State Code can't be 00"
+},
+"011176": {
+"dev_msg": "",
+"usr_act": "GSTIN/CTIN: is not Alphanumeric",
+"usr_msg": "GSTIN/CTIN: is not Alphanumeric"
+},
+"010177": {
+"dev_msg": "",
+"usr_act": "while CGST/SGST Rate or amount is set (IGST Rate not set), the supply type to be INTRA, check GSTIN/POS/CTIN/ETIN correctness",
+"usr_msg": "while CGST/SGST Rate or amount is set (IGST Rate not set), the supply type to be INTRA, check GSTIN/POS/CTIN/ETIN correctness"
+},
+"010179": {
+"dev_msg": "",
+"usr_act": "Invalid Original type of supply (value can be either INTER/INTRA)",
+"usr_msg": "Invalid Original type of supply (value can be either INTER/INTRA)"
+},
+"010180": {
+"dev_msg": "",
+"usr_act": "while CGST/SGST Rate or amount is set (IGST Rate not set), the Original supply type to be INTRA",
+"usr_msg": "while CGST/SGST Rate or amount is set (IGST Rate not set), the Original supply type to be INTRA"
+},
+"010181": {
+"dev_msg": "",
+"usr_act": "Both integrated rate and (central/state) rate can't be greater than zero.",
+"usr_msg": "Both integrated rate and (central/state) rate can't be greater than zero."
+},
+"010182": {
+"dev_msg": "",
+"usr_act": "Both aggregated rate and integrated rates are zero, (central and state) rate must be greater than zero",
+"usr_msg": "Both aggregated rate and integrated rates are zero, (central and state) rate must be greater than zero"
+},
+"010183": {
+"dev_msg": "",
+"usr_act": "When aggregated and integrated rates are zero, integrated amount must be zero",
+"usr_msg": "When aggregated and integrated rates are zero, integrated amount must be zero"
+},
+"010184": {
+"dev_msg": "",
+"usr_act": "When aggregated and state/central rates are zero, state/central amount must be zero",
+"usr_msg": "When aggregated and state/central rates are zero, state/central amount must be zero"
+},
+"010063": {
+"dev_msg": "",
+"usr_act": "Both integrated amount and (central/state) amount can't be greater than zero.",
+"usr_msg": "Both integrated amount and (central/state) amount can't be greater than zero."
+},
+"010186": {
+"dev_msg": "",
+"usr_act": "State and Central rate does not match",
+"usr_msg": "State and Central rate does not match"
+},
+"010187": {
+"dev_msg": "",
+"usr_act": "State and Central amounts does not match",
+"usr_msg": "State and Central amounts does not match"
+},
+"010188": {
+"dev_msg": "",
+"usr_act": "Both integrated amount and (central/state) amount can't be greater than zero.",
+"usr_msg": "Both integrated amount and (central/state) amount can't be greater than zero."
+},
+"010189": {
+"dev_msg": "",
+"usr_act": "Original type of supply can't be blank",
+"usr_msg": "Original type of supply can't be blank"
+},
+
+"011178": {
+"dev_msg": "Invalid Sname passed in the payload",
+"usr_act": "Invalid Sname passed in the payload",
+"usr_msg": "Invalid Sname passed in the payload"
+},
+"011179": {
+"dev_msg": "Empty/Invalid section is passed",
+"usr_act": "Empty/Invalid section is passed",
+"usr_msg": "Empty/Invalid section is passed"
+},
+"011180": {
+"dev_msg": "ReferenceId in the url params is missing",
+"usr_act": "ReferenceId in the url params is missing",
+"usr_msg": "ReferenceId in the url params is missing"
+},
+"011181": {
+"dev_msg": "Level in the url params is missing",
+"usr_act": "Level in the url params is missing",
+"usr_msg": "Level in the url params is missing"
+},
+"011182": {
+"dev_msg": "",
+"usr_act": "Note Date cannot be before 07/2017",
+"usr_msg": "Note Date cannot be before 07/2017"
+},
+"011183": {
+"dev_msg": "",
+"usr_act": "Original Invoice Date can't be before 07/2017",
+"usr_msg": "Original Invoice Date can't be before 07/2017"
+},
+"011184": {
+"dev_msg": "",
+"usr_act": "Original Invoice Date cannot be NULL",
+"usr_msg": "Original Invoice Date cannot be NULL"
+},
+"011185": {
+"dev_msg": "Level in the url params is unsupported ",
+"usr_act": "Level in the url params is  unsupported, please pass correct level ",
+"usr_msg": "Level in the url params is  unsupported "
+},
+"010185": {
+"dev_msg": "",
+"usr_act": "Invalid FP and original invoice date range",
+"usr_msg": "Invalid FP and original invoice date range"
+},
+"010064": {
+"dev_msg": "",
+"usr_act": "FP and Original Invoice date not in compliance",
+"usr_msg": "FP and Original Invoice date not in compliance"
+},
+"011087": {
+"dev_msg": "Original Invoice number has special characters",
+"usr_act": "Original Invoice number has special characters",
+"usr_msg": "Original Invoice number has special characters"
+},
+"011188": {
+"dev_msg": "",
+"usr_act": "Invoice number should not begin or end with special characters",
+"usr_msg": "Invoice number should not begin or end with special characters"
+},
+"011189": {
+    "dev_msg": "Shipping Bill port code cannot be blank",
+    "usr_act": "Shipping Bill port code cannot be blank",
+    "usr_msg": "Shipping Bill port code cannot be blank"
+  },
+ "011190": {
+    "dev_msg": "Shipping bill port code is more than 6 characters",
+    "usr_act": "Shipping bill port code is more than 6 characters",
+    "usr_msg": "Shipping bill port code is more than 6 characters"
+  },
+  "011191": {
+    "dev_msg": "Shipping bill port code is not alphanumeric",
+    "usr_act": "Shipping bill port code is not alphanumeric",
+    "usr_msg": "Shipping bill port code is not alphanumeric"
+  },
+  "011192": {
+    "dev_msg": "Given Shipping Bill Port Code is not correct",
+    "usr_act": "Given Shipping Bill Port Code is not correct",
+    "usr_msg": "Given Shipping Bill Port Code is not correct"
+  },
+  "011193": {
+    "dev_msg": "Given Shipping Bill Port Code has special characters, please check",
+    "usr_act": "Given Shipping Bill Port Code has special characters, please check",
+    "usr_msg": "Given Shipping Bill Port Code has special characters, please check"
+  },
+   "011194": {
+    "dev_msg": "Shipping Bill Port Code should not begin or end with special characters",
+    "usr_act": "Shipping Bill Port Code should not begin or end with special characters",
+    "usr_msg": "Shipping Bill Port Code should not begin or end with special characters"
+  },
+  "011195": {
+    "dev_msg": "Customer GSTIN can not be null or empty",
+    "usr_act": "Customer GSTIN can not be null or empty",
+    "usr_msg": "Customer GSTIN can not be null or empty"
+  },
+  "011196": {
+    "dev_msg": "Invalid Customer GSTIN Format/Invalid Length",
+    "usr_act": "Invalid Customer GSTIN Format/Invalid Length",
+    "usr_msg": "Invalid Customer GSTIN Format/Invalid Length"
+  },
+  "010197": {
+    "dev_msg": "Gstin and ctin are the same,gstin and ctin cannot be same",
+    "usr_act": "Gstin and ctin are the same,gstin and ctin cannot be same",
+    "usr_msg": "Gstin and ctin are the same,gstin and ctin cannot be same"
+  },
+  "010098": {
+    "dev_msg": "Invoice Type is Null / invalid ",
+    "usr_act": "Please provide valid value:1.Regular (R)  2.SEZ supplies with Pay (SEWP) 3.SEZ supplies without Pay (SEWOP) 4.Deemed Exports (DE) ",
+    "usr_msg": " Invoice Type can't be null or is invalid"
+  },
+  "011199": {
+  "dev_msg": "Validation Failed: Empty request data sent ",
+    "usr_act": "Validation Failed: Empty request data sent",
+    "usr_msg": " Validation Failed: Empty request data sent"
+  },
+  "010199": {
+    "dev_msg": "While invoice type is SEWP/DE, IGST rate and amount must be greater than zero",
+    "usr_act": "While invoice type is SEWP/DE, IGST rate and amount must be greater than zero",
+    "usr_msg": "While invoice type is SEWP/DE, IGST rate and amount must be greater than zero"
+  },
+   "011310": {
+    "dev_msg": "While invoice type is SEWP/DE, IGST rate and amount must be greater than zero",
+    "usr_act": "While invoice type is SEWP/DE, IGST rate and amount must be greater than zero",
+    "usr_msg": "While invoice type is SEWP/DE, IGST rate and amount must be greater than zero"
+  },
+  "011311": {
+    "dev_msg": "Fp is empty or null",
+    "usr_act": "can't pass empty or null fp, please check the value ",
+    "usr_msg": "can't pass empty or null fp, please check the value "
+  },
+
+  "010701": {
+    "dev_msg": "Invoice type is SEWOP/DE, CGST/SGST can't be set (only IGST is valid)",
+    "usr_act": "Invoice type is SEWOP/DE, CGST/SGST can't be set (only IGST is valid)",
+    "usr_msg": "Invoice type is SEWOP/DE, CGST/SGST can't be set (only IGST is valid)"
+  },
+   "010702": {
+    "dev_msg": "For Supply with SEZ without pay, IGST/CGST/SGST amount must be zero",
+    "usr_act": "For Supply with SEZ without pay, IGST/CGST/SGST amount must be zero",
+    "usr_msg": "For Supply with SEZ without pay, IGST/CGST/SGST amount must be zero"
+  },
+  "010703": {
+    "dev_msg": "Invalid Reverse Charge (Ex: Y/N )",
+    "usr_act": "Invalid Reverse Charge (Ex: Y/N )",
+    "usr_msg": "Invalid Reverse Charge (Ex: Y/N )"
+  },
+  "011704": {
+    "dev_msg": "Invalid Ecommerce TIN length",
+    "usr_act": "Invalid Ecommerce TIN length",
+    "usr_msg": "Invalid Ecommerce TIN length"
+  },
+  "011705": {
+    "dev_msg": "Invoice Value can't be zero/less than zero/null",
+    "usr_act": "Invoice Value can't be zero/less than zero/null",
+    "usr_msg": "Invoice Value can't be zero/less than zero/null"
+  },
+  "010706": {
+    "dev_msg": "Invoice Value must be greater than 250000 for B2CL/B2CLA type invoices",
+    "usr_act": "Invoice Value must be greater than 250000 for B2CL/B2CLA type invoices",
+    "usr_msg": "Invoice Value must be greater than 250000 for B2CL/B2CLA type invoices"
+  },
+  "011707": {
+    "dev_msg": "Export type is NULL",
+    "usr_act": "Export type is NULL",
+    "usr_msg": "Export type is NULL"
+  },
+  "011708": {
+    "dev_msg": "Export type has value apart from (With Payment of GST - WPAY/Without Payment of GST - WOPAY)",
+    "usr_act": "Please provide valid Export type (With Payment of GST - WPAY/Without Payment of GST - WOPAY)",
+    "usr_msg": "Please provide valid Export type (With Payment of GST - WPAY/Without Payment of GST - WOPAY)"
+  },
+  "010709": {
+    "dev_msg": "Export type is WOPAY but intergated tax amount has value",
+    "usr_act": "Export type is WOPAY but intergated tax amount has value",
+    "usr_msg": "Export type is WOPAY but intergated tax amount has value"
+  },
+  "010710": {
+    "dev_msg": "Export type is WPAY but integrated tax amount doesn’t have value",
+    "usr_act": "Export type is WPAY but integrated tax amount doesn’t have value",
+    "usr_msg": "Export type is WPAY but integrated tax amount doesn’t have value"
+  },
+  "011711": {
+    "dev_msg": "Invalid Shipping Bill Date/Shipping Bill Date Format(Ex: DD-MM-YYYY)",
+    "usr_act": "Invalid Shipping Bill Date/Shipping Bill Date Format(Ex: DD-MM-YYYY)",
+    "usr_msg": "Invalid Shipping Bill Date/Shipping Bill Date Format(Ex: DD-MM-YYYY)"
+  },
+   "011712": {
+    "dev_msg": "Shipping Bill Number can not be more than 7 digit",
+    "usr_act": "Shipping Bill Number can not be more than 7 digit",
+    "usr_msg": "Shipping Bill Number can not be more than 7 digit"
+  },
+  "011713": {
+    "dev_msg": "Original invoice number cannot be NULL",
+    "usr_act": "Original invoice number cannot be NULL",
+    "usr_msg": "Original invoice number cannot be NULL"
+  },
+  "011714": {
+    "dev_msg": "Original Invoice number is not an Alphanumeric",
+    "usr_act": "Original Invoice number is not an Alphanumeric",
+    "usr_msg": "Original Invoice number is not an Alphanumeric"
+  },
+  "011715": {
+    "dev_msg": "Invalid Original Invoice number",
+    "usr_act": "Invalid Original Invoice number",
+    "usr_msg": "Invalid Original Invoice number"
+  },
+  "011716": {
+    "dev_msg": "Original Invoice number should not begin or end with special characters",
+    "usr_act": "Original Invoice number should not begin or end with special characters",
+    "usr_msg": "Original Invoice number should not begin or end with special characters"
+  },
+  "011717": {
+    "dev_msg": "Shipping Bill Date can't be blank",
+    "usr_act": "Shipping Bill Date can't be blank",
+    "usr_msg": "Shipping Bill Date can't be blank"
+  },
+   "011718": {
+    "dev_msg": "Shipping Bill Number can't be blank",
+    "usr_act": "Shipping Bill Number can't be blank",
+    "usr_msg": "Shipping Bill Number can't be blank"
+  },
+    "010719": {
+    "dev_msg": "Integrated/Central/State tax rates does not match the standard tax rates",
+    "usr_act": "Integrated/Central/State tax rates does not match the standard tax rates",
+    "usr_msg": "Integrated/Central/State tax rates does not match the standard tax rates"
+  },
+   "010720": {
+    "dev_msg": "When integrated rate greater than zero, integrated amount can't be zero",
+    "usr_act": "When integrated rate greater than zero, integrated amount can't be zero",
+    "usr_msg": "When integrated rate greater than zero, integrated amount can't be zero"
+  },
+  "010721": {
+	"dev_msg": "FP can't be future date/before july 2017/blank/format other than mmyyyy",
+	"usr_act": "FP can't be future date/before july 2017/blank/format other than mmyyyy",
+	"usr_msg": "FP can't be future date/before july 2017/blank/format other than mmyyyy"
+  },
+  "010722": {
+	"dev_msg": "Number of Records exceeded the max limit",
+	"usr_act": "Number of Records exceeded the max limit",
+	"usr_msg": "Number of Records exceeded the max limit"
+  },
+"010723": {
+    "dev_msg": "Original month can not be future date/before july 2017/blank value/check format (mmyyyy)",
+    "usr_act": "Original month can not be future date/before july 2017/blank value/check format (mmyyyy)",
+    "usr_msg": "Original month can not be future date/before july 2017/blank value/check format (mmyyyy)"
+  },
+ "011724": {
+	"dev_msg": "Original Place Of Supply can not be blank",
+	"usr_act": "Original Place Of Supply can not be blank",
+	"usr_msg": "Original Place Of Supply can not be blank"
+  },
+"011725": {
+	"dev_msg": "Invalid Length of Original Place of Supply",
+	"usr_act": "Invalid Length of Original Place of Supply",
+	"usr_msg": "Invalid Length of Original Place of Supply"
+  },
+"010726": {
+	"dev_msg": "Invalid Original POS, is neither < 38 nor = 97",
+	"usr_act": "Invalid Original POS, is neither < 38 nor = 97",
+	"usr_msg": "Invalid Original POS, is neither < 38 nor = 97"
+  },
+"010727": {
+	"dev_msg": "Invalid Original place of Supply",
+	"usr_act": "Invalid Original place of Supply",
+	"usr_msg": "Invalid Original place of Supply"
+  },
+"011728": {
+	"dev_msg": "Original place of Supply cannot be zero",
+	"usr_act": "Original place of Supply cannot be zero",
+	"usr_msg": "Original place of Supply cannot be zero"
+  },
+"011729": {
+	"dev_msg": "Type Of Data cannot be blank",
+	"usr_act": "Type Of Data cannot be blank",
+	"usr_msg": "Type Of Data cannot be blank"
+  },
+"010730": {
+	"dev_msg": "If Type of Supply is B2B then CTIN is mantatory",
+	"usr_act": "If Type of Supply is B2B then CTIN is mantatory",
+	"usr_msg": "If Type of Supply is B2B then CTIN is mantatory"
+  },
+"011731": {
+	"dev_msg": "If Type of Supply is B2CL/EWPY/EWOPY then CTIN must be blank",
+	"usr_act": "If Type of Supply is B2CL/EWPY/EWOPY then CTIN must be blank",
+	"usr_msg": "If Type of Supply is B2CL/EWPY/EWOPY then CTIN must be blank"
+  },
+"010732": {
+	"dev_msg": "Invalid Type Of Supply (Values can be B2B/B2CL/EWPY/EWOPY)",
+	"usr_act": "Invalid Type Of Supply (Values can be B2B/B2CL/EWPY/EWOPY)",
+	"usr_msg": "Invalid Type Of Supply (Values can be B2B/B2CL/EWPY/EWOPY)"
+  },
+"010733": {
+	"dev_msg": "Invalid Note Type (Ex: C/D/R)",
+	"usr_act": "Invalid Note Type (Ex: C/D/R)",
+	"usr_msg": "Invalid Note Type (Ex: C/D/R)"
+  },
+"011734": {
+	"dev_msg": "Original Note Number cannot be blank",
+	"usr_act": "Original Note Number cannot be blank",
+	"usr_msg": "Original Note Number cannot be blank"
+  },
+"011735": {
+	"dev_msg": "Invalid Length of Original Note Number",
+	"usr_act": "Invalid Length of Original Note Number",
+	"usr_msg": "Invalid Length of Original Note Number"
+  },
+"011736": {
+	"dev_msg": "Given Original Note number is not an Alphanumeric",
+	"usr_act": "Given Original Note number is not an Alphanumeric",
+	"usr_msg": "Given Original Note number is not an Alphanumeric"
+  },
+"010737": {
+	"dev_msg": "Invalid Original Note number",
+	"usr_act": "Invalid Original Note number",
+	"usr_msg": "Invalid Original Note number"
+  },
+"011738": {
+	"dev_msg": "Given Original Note number has special characters, please check",
+	"usr_act": "Given Original Note number has special characters, please check",
+	"usr_msg": "Given Original Note number has special characters, please check"
+  },
+"011739": {
+	"dev_msg": "Original Note number should not begin or end with special characters",
+	"usr_act": "Original Note number should not begin or end with special characters",
+	"usr_msg": "Original Note number should not begin or end with special characters"
+  },
+"010740": {
+	"dev_msg": "Invalid Note Date/Invalid Date Format(Ex: DD-MM-YYYY)",
+	"usr_act": "Invalid Note Date/Invalid Date Format(Ex: DD-MM-YYYY)",
+	"usr_msg": "Invalid Note Date/Invalid Date Format(Ex: DD-MM-YYYY)"
+  },
+"010741": {
+	"dev_msg": "Note date cannot be future month for specified FP",
+	"usr_act": "Note date cannot be future month for specified FP",
+	"usr_msg": "Note date cannot be future month for specified FP"
+  },
+"010742": {
+	"dev_msg": "FP and Note year is wrong, crossing 18 months period - please validate",
+	"usr_act": "FP and Note year is wrong, crossing 18 months period - please validate",
+	"usr_msg": "FP and Note year is wrong, crossing 18 months period - please validate"
+  },
+"011743": {
+	"dev_msg": "Original Note Date cannot be blank",
+	"usr_act": "Original Note Date cannot be blank",
+	"usr_msg": "Original Note Date cannot be blank"
+  },
+"010744": {
+	"dev_msg": "Invalid Original Note Date/Invalid Date Format(Ex: DD-MM-YYYY)",
+	"usr_act": "Invalid Original Note Date/Invalid Date Format(Ex: DD-MM-YYYY)",
+	"usr_msg": "Invalid Original Note Date/Invalid Date Format(Ex: DD-MM-YYYY)"
+  },
+"010745": {
+	"dev_msg": "Original Note Date cannot be future month for specified FP",
+	"usr_act": "Original Note Date cannot be future month for specified FP",
+	"usr_msg": "Original Note Date cannot be future month for specified FP"
+  },
+"010746": {
+	"dev_msg": "Invalid FP and Original Note date range",
+	"usr_act": "Invalid FP and Original Note date range",
+	"usr_msg": "Invalid FP and Original Note date range"
+  },
+"010747": {
+	"dev_msg": "FP and Original Note year is wrong, crossing 18 months period - please validate",
+	"usr_act": "FP and Original Note year is wrong, crossing 18 months period - please validate",
+	"usr_msg": "FP and Original Note year is wrong, crossing 18 months period - please validate"
+  },
+"010748": {
+"dev_msg": "FP and Original Note date not in compliance",
+"usr_act": "FP and Original Note date not in compliance",
+"usr_msg": "FP and Original Note date not in compliance"
+},
+"011749": {
+"dev_msg": "",
+"usr_act": "Original Note Date cannot be before 07/2017",
+"usr_msg": "Original Note Date cannot be before 07/2017"
+},
+"010750": {
+"dev_msg": "Original Note Date Cannot be before the Invoice date",
+"usr_act": "Original Note Date Cannot be before the Invoice date",
+"usr_msg": "Original Note Date Cannot be before the Invoice date"
+},
+"010751": {
+	"dev_msg": "Invalid Original Note Date for given FP",
+	"usr_act": "Invalid Original Note Date for given FP",
+	"usr_msg": "Invalid Original Note Date for given FP"
+  },
+"010752": {
+"dev_msg": "Flag field doesnӴ have R or D or A value",
+"usr_act": "Flag should contain R or D or A value.",
+"usr_msg": "Flag field doesnӴ have R or D or A value"
+},
+"011753": {
+"dev_msg": "HSN/SAC and Description both can't be blank",
+"usr_act": "HSN/SAC and Description both can't be blank",
+"usr_msg": "HSN/SAC and Description both can't be blank"
+},
+"011754": {
+"dev_msg": "Invalid length of HSN/SAC (Min len: 2, Max len: 10)",
+"usr_act": "Invalid length of HSN/SAC (Min len: 2, Max len: 10)",
+"usr_msg": "Invalid length of HSN/SAC (Min len: 2, Max len: 10)"
+},
+"011755": {
+"dev_msg": "HSN/SAC contains special characters",
+"usr_act": "HSN/SAC contains special characters",
+"usr_msg": "HSN/SAC contains special characters"
+},
+"011756": {
+"dev_msg": "Invalid length of Description (Max len: 30)",
+"usr_act": "Invalid length of Description (Max len: 30)",
+"usr_msg": "Invalid length of Description (Max len: 30)"
+},
+"011757": {
+"dev_msg": "UQC is null",
+"usr_act": "UQC is null",
+"usr_msg": "UQC is null"
+},
+"011758": {
+"dev_msg": "UQC is more than 30 characters",
+"usr_act": "UQC is more than 30 characters",
+"usr_msg": "UQC is more than 30 characters"
+},
+"010759": {
+"dev_msg": "Invalid UQC, must be one of the valid value",
+"usr_act": "Invalid UQC, must be one of the valid value",
+"usr_msg": "Invalid UQC, must be one of the valid value"
+},
+"010760": {
+"dev_msg": "Invalid option for Advance type,  can be (A) - Adjustment / (R) - Recevied",
+"usr_act": "Invalid option for Advance type,  can be (A) - Adjustment / (R) - Recevied",
+"usr_msg": "Invalid option for Advance type,  can be (A) - Adjustment / (R) - Recevied"
+},
+"010761": {
+"dev_msg": "Advance Amount can't be zero or less than zero",
+"usr_act": "Advance Amount can't be zero or less than zero",
+"usr_msg": "Advance Amount can't be zero or less than zero"
+},
+"010762": {
+"dev_msg": "Invalid Type Of Supply (value can be INTRB2B/INTRB2C/INTRAB2B/INTRAB2C)",
+"usr_act": "Invalid Type Of Supply (value can be INTRB2B/INTRB2C/INTRAB2B/INTRAB2C)",
+"usr_msg": "Invalid Type Of Supply (value can be INTRB2B/INTRB2C/INTRAB2B/INTRAB2C)"
+  },
+ "010763": {
+    "dev_msg": "Invalid Document Type",
+    "usr_act": "Invalid Document Type",
+    "usr_msg": "Invalid Document Type"
+  },
+  "010764": {
+    "dev_msg": "Invalid Document Type number, valid between 1 & 12 (inclusive)",
+    "usr_act": "Invalid Document Type number, valid between 1 & 12 (inclusive)",
+    "usr_msg": "Invalid Document Type number, valid between 1 & 12 (inclusive)"
+  },
+ "011765": {
+    "dev_msg": "Sr. No. (From)  is left blank",
+    "usr_act": "Sr. No. (From)  is left blank",
+    "usr_msg": "Sr. No. (From)  is left blank"
+  },
+  "011766": {
+    "dev_msg": "Sr. No. (To)  is left blank",
+    "usr_act": "Sr. No. (To)  is left blank",
+    "usr_msg": "Sr. No. (To)  is left blank"
+  },
+"011767": {
+    "dev_msg": "Net Issued can't be less than zero",
+    "usr_act": "Net Issued can't be less than zero",
+    "usr_msg": "Net Issued can't be less than zero"
+  },
+"011768": {
+    "dev_msg": "Given Sales type (store id) has special characters, please check",
+    "usr_act": "Given Sales type (store id) has special characters, please check",
+    "usr_msg": "Given Sales type (store id) has special characters, please check"
+  },
+"011769": {
+    "dev_msg": "Sales type (store id) should not begin or end with special characters",
+    "usr_act": "Sales type (store id) should not begin or end with special characters",
+    "usr_msg": "Sales type (store id) should not begin or end with special characters"
+  },
+  
+  "011800": {
+    "dev_msg": " Financial period issue, gstr1 already submitted for given FP ",
+    "usr_act": " Financial period issue, gstr1 already submitted for given FP ",
+    "usr_msg": " Financial period issue, gstr1 already submitted for given FP "
+  },
+   "011801": {
+  "dev_msg": "Invalid section, param fp cannot be blank",
+    "usr_act": "Invalid fp, param fp cannot be blank",
+    "usr_msg": "Invalid fp, param fp cannot be blank"
+  },
+   "011802": {
+    "dev_msg": "Invalid Gstin, param gstin cannot be blank ",
+    "usr_act": "Invalid Gstin, param gstin cannot be blank",
+    "usr_msg": "Invalid Gstin, param gstin cannot be blank"
+  },
+   "011803": {
+"dev_msg": "Invalid fp, param fp cannot be blank",
+    "usr_act": "Invalid fp, param fp cannot be blank",
+    "usr_msg": "Invalid fp, param fp cannot be blank"
+  },
+  
+"010900": {
+    "dev_msg": "API Call Success",
+    "usr_act": "",
+    "usr_msg": " "
+  },
+  "010301": {
+   "dev_msg": "Unable to generate the results at this time, please try later.",
+   "usr_act": "Unable to generate the results at this time, please try later.",
+   "usr_msg": "Unable to generate the results at this time, please try later."
+  }
+}
